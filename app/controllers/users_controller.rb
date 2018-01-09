@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to(user_path(@user))
     else
-      redirecto_to(new_user_path)
+      redirect_to(new_user_path)
     end
   end
 
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   end
   private
     def user_params
-      params.require(:user).permit(:name,:email,:password_confirmation)
+      params.require(:user).permit(:name,:email, :password, :password_confirmation)
     end
 end
