@@ -1,2 +1,8 @@
-<h1>Activities#index</h1>
-<p>Find me in app/views/activities/index.html.erb</p>
+<h1>Activities</h1>
+
+<ul>
+    <% @activities.each do |a| %>
+        <li><%= link_to(a.name, activity_path(a))%></li>
+    <% end %>
+</ul>
+

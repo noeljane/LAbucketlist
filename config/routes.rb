@@ -1,21 +1,10 @@
 Rails.application.routes.draw do
-  get 'activities/index'
 
-  get 'activities/show'
-
-  get 'activities/new'
-
-  get 'activities/create'
-
-  get 'activities/edit'
-
-  get 'activities/update'
-
-  get 'activities/destroy'
-
-  root 'users#index'
+  root 'activities#index'
   resources :users 
   resources :sessions, only: [:new, :create]
+
+  resources :activities
 
   delete '/logout' => 'sessions#destroy', as: :logout
 
