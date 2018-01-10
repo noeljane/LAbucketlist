@@ -7,9 +7,20 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    @activity = Activity.new
   end
 
   def create
+    @activity = Activity.new(activity_params)
+    @activity.user = current_user
+    
+    if @activity.save
+      redirect_to activity_path(@activity)
+    else
+      redirect_to user_path(current_user)
+    end
+    
+
   end
 
   def edit
@@ -19,5 +30,10 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def activity_params
+    params.require(:activity).permit(:image_url, :note, :date_completed, :category, :neighborhood, :rating, :name, :link)
   end
 end

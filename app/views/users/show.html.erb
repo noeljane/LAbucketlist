@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %></h1>
+
+<!-- Activity Form -->
+<%= form_for @activity do |f| %>
+    <%= f.text_field :name, placeholder: "What's your place?" %>
+    <%= f.text_field :link, placeholder: "Link" %>
+    <%= f.text_field :image_url, placeholder: "Image URL" %>
+    <%= f.text_field :note, placeholder:"Note" %>
+    <%= f.date_field :date_completed, placeholder: "Date completed" %>
+    <%= f.text_field :category, placeholder: "Category" %>
+    <%= f.text_field :neighborhood, placeholder: "Neighborhood" %>
+    <%= f.number_field :rating %>
+    <%= f.submit %>
+<% end %>
+
+<!-- I want to add a section here that updates the view if the user is not logged in. Only a user can add activities from their page  -->
+
+<!--Activities -->
+<h2><%=@user.name %>'s Activities</h2>
+<ul>
+<% @user.activities.each do |a| %>
+    <li><%=link_to(a.name,activity_path(a) )%></li>
+<% end %>
+</ul>

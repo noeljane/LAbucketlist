@@ -4,7 +4,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
+  def show 
+    @user = User.find(params[:id])
+    @activity = Activity.new
+    @user.activities 
   end
 
   def new
