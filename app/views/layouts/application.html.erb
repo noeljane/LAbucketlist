@@ -17,6 +17,12 @@
     <% else %>
       <%=link_to('Log In', new_session_path) %>
     <% end %>
+    <nav>
+      <%= link_to('My Profile', user_path(current_user)) %>
+      <%= link_to('All Users', users_path) %>
+      <%= link_to('Discover Activities', activities_path) %>
+      <%= link_to('Add Activity', new_activity_path) %>
+    </nav>
     <%= yield %>
   </body>
 </html>
