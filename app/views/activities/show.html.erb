@@ -1,2 +1,14 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<h1><%= @activity.name %></h1>
+
+
+<ul>
+    <li>
+        <div><%=image_tag(@activity.image_url) %></div>
+        <div>More info: <%= link_to(@activity.link) %></div>
+        <div>Note: <%= @activity.note %></div>
+        <div>Date Completed: <%= @activity.date_completed %></div>
+        <div>Neighborhood: <%= @activity.neighborhood %></div>
+        <div>Rating(1-5): <%= @activity.rating %></div>
+        <div>Done by: <%= link_to(@user.name, user_path(@user)) %></div>
+    </li>
+</ul>
