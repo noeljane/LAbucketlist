@@ -19,6 +19,9 @@
 <h2><%=@user.name %>'s Activities</h2>
 <ul>
 <% @user.activities.each do |a| %>
-    <li><%=link_to(a.name,activity_path(a) )%></li>
+    <li>
+        <%=image_tag(a.image_url) %>
+        <%=link_to(a.name,activity_path(a) )%>
+    </li>
 <% end %>
 </ul>
