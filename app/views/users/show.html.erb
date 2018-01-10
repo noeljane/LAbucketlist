@@ -16,12 +16,28 @@
 <!-- I want to add a section here that updates the view if the user is not logged in. Only a user can add activities from their page  -->
 
 <!--Activities -->
-<h2><%=@user.name %>'s Activities</h2>
+<h2><%=@user.name %>'s Activities To Do</h2>
 <ul>
 <% @user.activities.each do |a| %>
+    <% if a.date_completed == nil %>
     <li>
         <%=image_tag(a.image_url) %>
         <%=link_to(a.name,activity_path(a) )%>
     </li>
+    <% end %>
 <% end %>
 </ul>
+
+<!--
+List completed Activities 
+-->
+<h2><%=@user.name %>'s Activities</h2>
+<ul>
+<% @user.activities.each do |a| %>
+    <% if a.date_completed != nil %>
+    <li>
+        <%=image_tag(a.image_url) %>
+        <%=link_to(a.name,activity_path(a) )%>
+    </li>
+    <% end %>
+<% end %>
