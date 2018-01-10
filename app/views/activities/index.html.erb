@@ -1,4 +1,8 @@
-<h1>Activities</h1>
+<% if params[:q] %>
+    <h1>Search results for: <%= params[:q] %></h1>
+<% else %>
+    <h1>All Activities</h1>
+<% end %>
 
 <ul>
     <% @activities.each do |a| %>

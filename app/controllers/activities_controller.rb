@@ -1,6 +1,10 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    if params[:q]
+      @activities = Activity.where("name ILIKE ?", "%#{params[:q]}%")
+    else
+      @activities = Activity.all
+    end
   end
 
   def show

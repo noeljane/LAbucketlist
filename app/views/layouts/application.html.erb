@@ -11,17 +11,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      Signed In As: <%= current_user.name %>
-      <%=link_to('Logout',logout_path, method:'delete') %>
-    <% else %>
-      <%=link_to('Log In', new_session_path) %>
-    <% end %>
-    <nav>
-      <%= link_to('Discover Activities', activities_path) %>
-      <%= link_to('All Users', users_path) %>
-      <%= link_to('Add Activity', new_activity_path) %>
-    </nav>
+    <%= render 'partials/navbar' %>
     <%= yield %>
   </body>
 </html>
