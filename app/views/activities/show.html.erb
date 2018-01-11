@@ -13,4 +13,7 @@
     </li>
 </ul>
 
-<%= link_to("Edit",edit_activity_path(@activity)) %>
+<div>
+    <%= link_to("Edit",edit_activity_path(@activity)) %>
+    <%= link_to("Delete",activity_path(@activity), method: "delete") %>
+</div>

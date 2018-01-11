@@ -24,19 +24,32 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to activity_path(@activity)
     else
-      redirect_to user_path(current_user)
+      redirect_to new_activity_path
     end
     
 
   end
 
   def edit
+    @activity = Activity.find(params[:id])
   end
 
   def update
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      redirect_to activity_path(@activity)
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def destroy
+    @activity = Activity.find(params[:id])
+    if @activity.destroy
+      redirect_to activities_path
+    else
+      redirect_to activity_path(@activity)
+    end
   end
 
   private
