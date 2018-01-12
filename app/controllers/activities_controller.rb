@@ -1,7 +1,5 @@
 class ActivitiesController < ApplicationController
   before_action :verify_activity_owner, only: [:edit, :update, :destroy]
-
-
   def index
     if params[:q]
       @activities = Activity.where("name ILIKE ?", "%#{params[:q]}%")
@@ -27,12 +25,11 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to activity_path(@activity)
     else
+      flash[:danger] = "You need to be signed in."
       redirect_to new_activity_path
     end
-    
-
   end
-
+    
   def edit
     @activity = Activity.find(params[:id])
   end

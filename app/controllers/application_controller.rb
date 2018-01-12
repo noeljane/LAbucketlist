@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
+    flash[:danger] = "You are not logged in."
     redirect_to new_session_path unless logged_in?
   end
 

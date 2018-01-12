@@ -1,5 +1,11 @@
 <h1>Add Activity</h1>
 
+<% if flash[:danger] %>
+    <div class = "alert alert-danger">
+        <%= flash[:danger] %>
+    </div>
+<% end %>
+
 <!-- Activity Form -->
 <%= form_for @activity do |f| %>
     <%= f.text_field :name, placeholder: "What's your place?" %>

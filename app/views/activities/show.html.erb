@@ -22,6 +22,11 @@
 </ul>
 
 <!-- Comment Form -->
+<% if flash[:danger] %>
+    <div class = "alert alert-danger">
+        <%= flash[:danger] %>
+    </div>
+<% end %>
 <%= form_for @comment, url:activity_comments_path(@activity) do |f| %>
     <%= f.text_area :body, placeholder: "Comment on this..." %>
     <%=f.submit %>

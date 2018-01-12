@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to activity_path(@activity)
     else
+      flash[:danger] = "You need to be signed in."
       redirect_to activity_path(@activity)
     end
   end

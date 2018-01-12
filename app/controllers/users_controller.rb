@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to(user_path(@user))
     else
+      flash[:danger]= "Passwords don't match."
       redirect_to(new_user_path)
     end
   end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to(user_path(@user))
+      redirect_to(user_path)
     else
       redirect_to(edit_user_path)
     end
