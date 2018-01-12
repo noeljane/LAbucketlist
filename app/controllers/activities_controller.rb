@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @user_id = @activity.user_id
     @user = User.find(@user_id)
-  end
+    @comment = Comment.new
 
   def new
     @activity = Activity.new
@@ -49,6 +49,7 @@ class ActivitiesController < ApplicationController
       redirect_to activities_path
     else
       redirect_to activity_path(@activity)
+    end
     end
   end
 

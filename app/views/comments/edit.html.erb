@@ -1,0 +1,9 @@
+<h1>Edit Your Comment</h1>
+
+<!-- Comment Form -->
+<%= form_for @comment do |f| %>
+    <%= f.text_area :body, placeholder: "Comment on this..." %>
+    <%= f.select :user_id,  User.all.collect {|u| [ u.name, u.id ] } %>
+    <%=f.submit %>
+<% end %>
+<!-- -->

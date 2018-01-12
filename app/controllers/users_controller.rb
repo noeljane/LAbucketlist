@@ -37,8 +37,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     session[:user_id] = nil
-    current_user.destroy
+    @user.destroy
   end
   private
     def user_params

@@ -1,24 +1,29 @@
 <h1><%= @user.name %></h1>
 
+<!-- If user is not logged in or this is not their profile, they cannot see this below   -->
 
+<% if logged_in? && current_user.id == params[:id] %>
 
-<!-- Activity Form -->
-<%= form_for @activity do |f| %>
-    <%= f.text_field :name, placeholder: "What's your place?" %>
-    <%= f.text_field :link, placeholder: "Link" %>
-    <%= f.text_field :image_url, placeholder: "Image URL" %>
-    <%= f.text_field :note, placeholder:"Note" %>
-    <%= f.date_field :date_completed, placeholder: "Date completed" %>
-    <%= f.text_field :category, placeholder: "Category" %>
-    <%= f.text_field :neighborhood, placeholder: "Neighborhood" %>
-    <%= f.number_field(:rating, placeholder:"Rating", in: 0.0..5.0) %>
+    <%= link_to("Edit Profile", edit_user_path(@user)) %>
+    <%= link_to("Delete Profile", logout_path, method: "delete") %>
 
-    <%= f.submit %>
+    <h2>Add Activities</h2>
+
+    <!-- Activity Form -->
+    <%= form_for @activity do |f| %>
+        <%= f.text_field :name, placeholder: "What's your place?" %>
+        <%= f.text_field :link, placeholder: "Link" %>
+        <%= f.text_field :image_url, placeholder: "Image URL" %>
+        <%= f.text_field :note, placeholder:"Note" %>
+        <%= f.date_field :date_completed, placeholder: "Date completed" %>
+        <%= f.text_field :category, placeholder: "Category" %>
+        <%= f.text_field :neighborhood, placeholder: "Neighborhood" %>
+        <%= f.number_field(:rating, placeholder:"Rating", in: 0.0..5.0) %>
+
+        <%= f.submit %>
+    <% end %>
+
 <% end %>
-
-
-
-<!-- I want to add a section here that updates the view if the user is not logged in. Only a user can add activities from their page  -->
 
 <!--Activities -->
 <h2><%=@user.name %>'s Activities To Do</h2>
@@ -33,9 +38,7 @@
 <% end %>
 </ul>
 
-<!--
-List completed Activities 
--->
+<!--List completed Activities -->
 <h2><%=@user.name %>'s Activities</h2>
 <ul>
 <% @user.activities.each do |a| %>

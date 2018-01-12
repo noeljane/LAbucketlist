@@ -1,5 +1,9 @@
 <h1><%= @activity.name %></h1>
 
+<div>
+    <%= link_to("Edit",edit_activity_path(@activity)) %>
+    <%= link_to("Delete",activity_path(@activity), method: "delete") %>
+</div>
 
 <ul>
     <li>
@@ -13,7 +17,22 @@
     </li>
 </ul>
 
-<div>
-    <%= link_to("Edit",edit_activity_path(@activity)) %>
-    <%= link_to("Delete",activity_path(@activity), method: "delete") %>
+<!-- Comment Form -->
+<%= form_for @comment, url:activity_comments_path(@activity) do |f| %>
+    <%= f.text_area :body, placeholder: "Comment on this..." %>
+    <%= f.select :user_id,  User.all.collect {|u| [ u.name, u.id ] }%>
+    <%=f.submit %>
+<% end %>
+<!-- -->
+
+<!-- List comments for this Activity -->
+<ul>
+<% @activity.comments.each do |c| %>
+    <li><%= c.body %></li>
+    <div>
+    <%= link_to("Edit",edit_activity_comment_path(c)) %>
+    <%= link_to("Delete",activity_comment_path(c) , method: "delete") %>
+    </div>
 </div>
+<% end %>
+</ul>
