@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:show]
+  
   def index
     @users = User.all
   end
@@ -17,9 +18,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to(user_path(@user))
+      redirect_to(user_path(@user))      
     else
-      flash[:danger]= "Passwords don't match."
+      flash[:danger]= "Passwords don't match/Email is already taken"
       redirect_to(new_user_path)
     end
   end
