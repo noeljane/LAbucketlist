@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to new_sessions_path unless logged_in?
   end
+
+  def verify_activity_owner
+    @activity = Activity.find(params[:id])
+    if current_user != @activity.user
+      flash[:danger] = "You are not authorized to do that!"
+      redirect_to root_path
+    end
+  end
 end

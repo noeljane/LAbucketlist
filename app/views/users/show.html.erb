@@ -2,7 +2,7 @@
 
 <!-- If user is not logged in or this is not their profile, they cannot see this below   -->
 
-<% if logged_in? && current_user.id == params[:id] %>
+
 
     <%= link_to("Edit Profile", edit_user_path(@user)) %>
     <%= link_to("Delete Profile", logout_path, method: "delete") %>
@@ -23,7 +23,6 @@
         <%= f.submit %>
     <% end %>
 
-<% end %>
 
 <!--Activities -->
 <h2><%=@user.name %>'s Activities To Do</h2>

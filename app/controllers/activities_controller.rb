@@ -1,4 +1,7 @@
 class ActivitiesController < ApplicationController
+  before_action :verify_activity_owner, only: [:edit, :update, :destroy]
+
+
   def index
     if params[:q]
       @activities = Activity.where("name ILIKE ?", "%#{params[:q]}%")
@@ -50,6 +53,17 @@ class ActivitiesController < ApplicationController
     else
       redirect_to activity_path(@activity)
     end
+    end
+  end
+
+  def copy
+    @activity = Activity.find(params[:id]).dup
+    @activity.user = current_user
+    @activity.date_completed = nil
+    if @activity.save
+      redirect_to user_path(current_user)
+    else
+      redirect_to activity_path(params[:id])
     end
   end
 
