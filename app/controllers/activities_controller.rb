@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @comment = Comment.new
     @user = @activity.user
+  end
 
   def new
     @activity = Activity.new
@@ -52,8 +53,9 @@ class ActivitiesController < ApplicationController
     else
       redirect_to activity_path(@activity)
     end
-    end
   end
+
+
 
   def copy
     @activity = Activity.find(params[:id]).dup
