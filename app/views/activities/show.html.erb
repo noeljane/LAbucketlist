@@ -24,7 +24,6 @@
 <!-- Comment Form -->
 <%= form_for @comment, url:activity_comments_path(@activity) do |f| %>
     <%= f.text_area :body, placeholder: "Comment on this..." %>
-    <%# f.select :user_id,  User.all.collect {|u| [ u.name, u.id ] }%>
     <%=f.submit %>
 <% end %>
 <!-- -->

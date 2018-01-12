@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new
-    @comment.body = params[:comment][:body]
+    @comment = Comment.new(comment_params)
     @comment.user = current_user
     @activity = Activity.find(params[:activity_id])
     @comment.activity = @activity
@@ -13,14 +12,15 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:activity_id])
+    @comment = Comment.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
   end
 
   def update
-    @comment = Comment.find(params[:comments][:id])
-    @comment.activity_id = Activity.find(params[:activity_id])
+    @comment = Comment.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
     @comment.user = current_user
-    if @comment.save
+    if @comment.update(comment_params)
       redirect_to activity_path(@activity)
     else
       redirect_to activity_path(@activity)
