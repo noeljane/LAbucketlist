@@ -1,5 +1,5 @@
 <%= link_to("Copy To Your List", copy_activity_path, method: 'post') %>
-
+<%= "⭐" * 10 %>
 <h1><%= @activity.name %></h1>
 
 <% if logged_in? && current_user == @activity.user %>
