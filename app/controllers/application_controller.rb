@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def verify_user
+    @user = User.find(params[:id])
+    if current_user != @user
+      flash[:danger] = "You need to log in as this user to edit their profile"
+      redirect_to user_path(@user)
+    end
+  end
 end
