@@ -1,11 +1,7 @@
 <h1><%= @user.name %></h1>
 
 <!-- If user is not logged in or this is not their profile, they cannot see this below   -->
-<% if flash[:danger] %>
-    <div class = "alert alert-danger">
-        <%= flash[:danger] %>
-    </div>
-<% end %>
+
 
 <% if logged_in? && current_user == @user %>
     <%= link_to("Edit Profile", edit_user_path(@user)) %>

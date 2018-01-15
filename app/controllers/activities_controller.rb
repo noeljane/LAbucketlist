@@ -21,13 +21,17 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
-    
-    if @activity.save
-      redirect_to activity_path(@activity)
+    if @activity.image_url.include?("http")
+      if @activity.save
+        redirect_to activity_path(@activity)
+      else
+        flash[:danger] = "You need to be signed in."
+        redirect_to new_activity_path
+      end
     else
-      flash[:danger] = "You need to be signed in."
+      flash[:danger] = "Your image URL needs to include http."
       redirect_to new_activity_path
-    end
+    end 
   end
     
   def edit
