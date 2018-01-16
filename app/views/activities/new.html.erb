@@ -6,7 +6,9 @@
     </div>
 <% end %>
 
-<!-- Activity Form -->
+<%= render 'partials/activitynew' %>
+
+<!-- Old Activity Form 
 <%= form_for @activity do |f| %>
     <%= f.text_field :name, required: true,  placeholder: "What's your place?" %>
     <%= f.text_field :link, placeholder: "Link" %>
@@ -19,3 +21,4 @@
 
     <%= f.submit %>
 <% end %>
+-->

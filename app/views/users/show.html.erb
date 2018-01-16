@@ -14,17 +14,7 @@
     <h2>Add Activities</h2>
 
     <!-- Activity Form -->
-    <%= form_for @activity do |f| %>
-        <%= f.text_field :name,required: true, placeholder: "What's your place?" %>
-        <%= f.text_field :link, placeholder: "Link" %>
-        <%= f.text_field :image_url, placeholder: "Image URL" %>
-        <%= f.text_field :note, placeholder:"Note" %>
-        <%= f.date_field :date_completed, placeholder: "Date completed" %>
-        <%= f.text_field :category, placeholder: "Category" %>
-        <%= f.text_field :neighborhood, placeholder: "Neighborhood" %>
-        <%= f.number_field(:rating, placeholder:"Rating", in: 0.0..5.0) %>
-        <%= f.submit %>
-    <% end %>
+<%= render 'partials/activitynew' %>
 <% end %>
 
 
