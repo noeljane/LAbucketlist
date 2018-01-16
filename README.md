@@ -60,6 +60,10 @@ It would be cool if you could invite your friends to do a bucket list with you o
 
 This was a gem I had heard of but there were rumors it's not up to date and the documentation is sloppy
 
+**6. Refactor Code to make it DRY**
+
+There might be some superfluous code because I don't have good habits yet to keep my rails app super organized. 
+
 --
 ### Trello Link
 
