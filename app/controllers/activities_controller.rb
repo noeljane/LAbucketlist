@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :verify_activity_owner, only: [:edit, :update, :destroy]
+  
   def index
     if params[:q]
       @activities = Activity.where("name ILIKE ?", "%#{params[:q]}%")
