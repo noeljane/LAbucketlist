@@ -18,7 +18,7 @@ It was inspired by my friend who is hoping to complete a list of things in LA be
 ### Approach Taken
 
 1. Made ERD model 
-see picture below
+![](./screenshots/screenshot1.png)
 2. Created User model 
 3. Created Session Model with cookies
 4. Created Trello board with daily goals 
@@ -30,10 +30,8 @@ see picture below
 
 --
 ### Installation & Startup Instructions
-***_I legitimately don't know how to write this. I have to play with heroku a bunch. 
+Go to this [link:](https://sleepy-shelf-87152.herokuapp.com/) 
 
-Write this in class
-_
 --
 ###Unsolved Problems & Next Steps
 
@@ -70,4 +68,17 @@ There might be some superfluous code because I don't have good habits yet to kee
 --
 ### Trello Link
 
+I have a really cool looking Trello
+
 https://trello.com/b/nMX5Wn2D/la-bucket-list-rails-app
+
+### Credits
+
+Martin Luther King Jr. 
+	For giving me a 3 day weekend to work on this
+
+Slack
+	For giving me access to other people's code that fixed things. 
+	
+Classmates & Teachers
+	For giving me code that fixes things

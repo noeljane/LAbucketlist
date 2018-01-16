@@ -1,8 +1,12 @@
 <h1>Edit Your Comment</h1>
 
 <!-- Comment Form -->
+
 <%= form_for @comment, url:activity_comment_path(@activity) do |f| %>
-    <%= f.text_area :body, placeholder: "Comment on this..." %>
-    <%=f.submit %>
+    <div class="form-group">
+        <label>Your comment here:</label>
+        <%= f.text_area :body, placeholder: "Comment on this...", class: "form-control", rows: "3" %>
+    </div>
+    <%= f.submit class:"btn btn-success" %>
 <% end %>
 <!-- -->
