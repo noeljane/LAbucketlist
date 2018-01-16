@@ -10,13 +10,18 @@
     <h1>All Activities</h1>
 <% end %>
 
-<ul>
-    <% @activities.each do |a| %>
-        <li>
-            <%= link_to(image_tag(a.image_url), activity_path(a))%>
-            <%= link_to(a.name, activity_path(a))%>
-            
-        </li>
-    <% end %>
-</ul>
+<% @activities.each_slice(3) do |row| %>
+    <div class="row">
+        <% row.each do |a| %>
+            <div class="col-sm-4">
+                <div class="card">
+                    <%= image_tag(a.image_url, class: "card-img")%>
+                <div class="card-body">
+                    <h5 class="card-title"><%= link_to(a.name, activity_path(a))%></h5>
+                </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+<% end %>
 

@@ -8,7 +8,7 @@
 
 <!-- Activity Form -->
 <%= form_for @activity do |f| %>
-    <%= f.text_field :name, placeholder: "What's your place?" %>
+    <%= f.text_field :name, required: true,  placeholder: "What's your place?" %>
     <%= f.text_field :link, placeholder: "Link" %>
     <%= f.text_field :image_url, placeholder: "Image URL" %>
     <%= f.text_field :note, placeholder:"Note" %>

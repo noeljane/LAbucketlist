@@ -15,7 +15,7 @@
         <div>Note: <%= @activity.note %></div>
         <div>Date Completed: <%= @activity.date_completed %></div>
         <div>Neighborhood: <%= @activity.neighborhood %></div>
-        <div>Rating(1-5): <%= "⭐" *  @activity.rating.to_i %></div>
+        <div>Rating(1-5): <%= "⭐" * @activity.rating.to_i %> </div>
         <div>Done by: <%= link_to(@user.name, user_path(@user)) %></div>
     </li>
 </ul>
