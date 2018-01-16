@@ -1,5 +1,4 @@
 <%= link_to("Copy To Your List", copy_activity_path, method: 'post') %>
-<%= "⭐" * 10 %>
 <h1><%= @activity.name %></h1>
 
 <% if logged_in? && current_user == @activity.user %>
@@ -16,7 +15,7 @@
         <div>Note: <%= @activity.note %></div>
         <div>Date Completed: <%= @activity.date_completed %></div>
         <div>Neighborhood: <%= @activity.neighborhood %></div>
-        <div>Rating(1-5): <%= @activity.rating %></div>
+        <div>Rating(1-5): <%= "⭐" *  @activity.rating.to_i %></div>
         <div>Done by: <%= link_to(@user.name, user_path(@user)) %></div>
     </li>
 </ul>
