@@ -62,7 +62,13 @@ This was a gem I had heard of but there were rumors it's not up to date and the 
 
 **6. Refactor Code to make it DRY**
 
+
 There might be some superfluous code because I don't have good habits yet to keep my rails app super organized. 
+
+**7. Add Activity Name requirement. **
+
+I had to move on. I think this required updating my model. 
+
 
 --
 ### Trello Link
