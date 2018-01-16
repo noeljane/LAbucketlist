@@ -1,5 +1,4 @@
 # LA Bucket List
---
 
 ###Description of the App
 
