@@ -31,7 +31,7 @@ It was inspired by my friend who is hoping to complete a list of things in LA be
 ### Installation & Startup Instructions
 Go to this [link:](https://sleepy-shelf-87152.herokuapp.com/) 
 
---
+
 ###Unsolved Problems & Next Steps
 
 I wanted to make this app as a gift to a friend so I was hoping it would be very user-friendly so that she could really use it to track her work. 
