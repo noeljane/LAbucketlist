@@ -1,6 +1,6 @@
 # LA Bucket List
 
-###Description of the App
+### Description of the App
 
 
 This app is designed to help you discover, plan, and document activities that you complete in the city where you live. 
@@ -9,7 +9,7 @@ It was inspired by my friend who is hoping to complete a list of things in LA be
 
 --
 
-###Technologies Used
+### Technologies Used
 
 <p> Ruby on Rails, HTML, CSS, Bootstrap, and my quick wit</p>
 --
@@ -32,14 +32,13 @@ It was inspired by my friend who is hoping to complete a list of things in LA be
 Go to this [link:](https://sleepy-shelf-87152.herokuapp.com/) 
 
 
-###Unsolved Problems & Next Steps
+### Unsolved Problems & Next Steps
 
 I wanted to make this app as a gift to a friend so I was hoping it would be very user-friendly so that she could really use it to track her work. 
 
 **1. Password Reset **
 
 I made several lengthy attempts at figuring this out using Michael Hartl's tutorial and the devise gem. None of it worked out. I need more in depth understanding of the rails framework and common practices. 
-
 
 **2. Get user logged in automatically after creating an account **
 
@@ -58,7 +57,6 @@ It would be cool if you could invite your friends to do a bucket list with you o
 This was a gem I had heard of but there were rumors it's not up to date and the documentation is sloppy
 
 **6. Refactor Code to make it DRY**
-
 
 There might be some superfluous code because I don't have good habits yet to keep my rails app super organized. 
 
