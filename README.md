@@ -36,15 +36,15 @@ Go to this [link:](https://sleepy-shelf-87152.herokuapp.com/)
 
 I wanted to make this app as a gift to a friend so I was hoping it would be very user-friendly so that she could really use it to track her work. 
 
-** 1. Password Reset **
+**1. Password Reset **
 
 I made several lengthy attempts at figuring this out using Michael Hartl's tutorial and the devise gem. None of it worked out. I need more in depth understanding of the rails framework and common practices. 
 
-** 2. Get user logged in automatically after creating an account **
+**2. Get user logged in automatically after creating an account **
 
 This might be straight-forward but it was a project I didn't think about until the last day. 
 
-** 3.  Make it more beautiful **
+**3.  Make it more beautiful **
 
 Bootstrap is overwhelming. I didn't know where to start. 
 
